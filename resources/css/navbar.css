@@ -1,0 +1,128 @@
+.navbar {
+    background-color: rgb(4, 4, 110);
+    width: 225px;
+    height: 100vh;
+    color: white;
+    padding: 20px;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.25);
+
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+    align-self: flex-start;
+
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: #a9d4fa;
+    font-size: 17px;
+    padding: 15px 22px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: rgb(62, 167, 237);
+    color: rgb(8, 34, 73);
+    transform: scale(1.10);
+}
+
+.logo {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #a4d0f6;
+}
+
+.logo small {
+    font-size: 11px;
+    color: white;
+}
+
+
+.navbar hr {
+    border: none;
+    height: 1px;
+    background-color: #4a79a8;
+    margin: 15px 0;
+}
+
+
+
+.navbar>small {
+    margin-top: auto;
+    text-align: center;
+    font-size: 11px;
+    color: #a0cdf5;
+}
+
+
+.menu li a.activo {
+    background-color: rgb(89, 186, 250);
+    color: rgb(8, 34, 73);
+}/* --- ADAPTACIÓN A MORADO MODERNO (GENERAL) --- */
+
+/* Fondos generales y contenedores */
+body, .contenedor, main {
+    background-color: #f8fafc !important;
+}
+
+/* Encabezados de sección en las otras vistas */
+.medicos-header, .pacientes-header, .home-header, .consultorios-header {
+    background: linear-gradient(135deg, #5b21b6, #7c3aed) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 20px -5px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Títulos y textos dentro de los encabezados */
+.medicos-header h1, .pacientes-header h1, .home-header h1, 
+.medicos-header p, .pacientes-header p, .home-header p {
+    color: white !important;
+}
+
+/* Botones de acción y formularios en general */
+.btn-primary, .btn-nuevo, button[type="submit"] {
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+.btn-primary:hover, .btn-nuevo:hover, button[type="submit"]:hover {
+    background-color: #5b21b6 !important;
+}
+
+/* Encabezados de tablas en otras vistas */
+table th, .table th {
+    background-color: #f3e8ff !important;
+    color: #5b21b6 !important;
+}

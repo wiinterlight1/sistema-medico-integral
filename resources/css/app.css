@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 1. Tipografía general y fondo */
+body, input, button, select, textarea, table, * {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    background-color: #f8fafc !important;
+}
+
+/* 2. Encabezados de todas las vistas */
+header, [class*="-header"], .citas-dashboard-moderno {
+    background: linear-gradient(135deg, #4c1d95, #7c3aed) !important;
+    color: white !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.3) !important;
+}
+
+[class*="-header"] h1, [class*="-header"] p, [class*="-header"] span {
+    color: white !important;
+}
+
+/* 3. Tarjetas y contenedores */
+.card, .card-stat, [class*="panel"], .tabla-contenedor {
+    border-radius: 14px !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.08) !important;
+    background: #ffffff !important;
+}
+
+/* 4. Tablas */
+table, .table {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+}
+
+table th, .table th {
+    background-color: #f3e8ff !important;
+    color: #5b21b6 !important;
+    font-weight: 600 !important;
+    padding: 12px !important;
+}
+
+/* 5. Botones */
+.btn-primary, .btn-nuevo, button[type="submit"], .btn-principal, .btn-buscar {
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-primary:hover, .btn-nuevo:hover, button[type="submit"]:hover, .btn-principal:hover {
+    background-color: #5b21b6 !important;
+    transform: translateY(-1px);
+}
+
+/* 6. Modales */
+dialog, .modal, [class*="modal"] {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}

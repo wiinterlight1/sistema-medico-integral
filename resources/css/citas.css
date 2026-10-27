@@ -1,0 +1,662 @@
+
+/* PÁGINA DE CITAS */
+.citas-dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px;
+    background-color: #f0f3f8;
+    box-sizing: border-box;
+}
+
+/* ENCABEZADO */
+.citas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.citas-header .etiqueta {
+    color: #4176a5;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.citas-header h1 {
+    color: #101945;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.citas-header p {
+    color: #77839a;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* BOTÓN PRINCIPAL */
+.btn-principal {
+    background-color: #08086e;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding: 14px 23px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(8, 8, 110, 0.15);
+}
+
+/* ESTADÍSTICAS */
+.citas-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.citas-resumen {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e7edf5;
+    box-shadow: 0 5px 20px rgba(20, 37, 84, 0.05);
+    transition: all 0.3s ease;
+}
+
+.citas-resumen:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(20, 37, 84, 0.10);
+}
+
+.citas-resumen h3 {
+    color: #495875;
+    font-size: 16px;
+    margin: 0 0 12px;
+}
+
+.citas-resumen h2 {
+    color: #101945;
+    font-size: 38px;
+    margin: 0 0 10px;
+}
+
+.citas-resumen p {
+    color: #8994a8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.citas-resumen:nth-child(2) {
+    border-top: 4px solid #f59e0b;
+}
+
+.citas-resumen:nth-child(3) {
+    border-top: 4px solid #10b981;
+}
+
+.citas-resumen:nth-child(4) {
+    border-top: 4px solid #ef4444;
+}
+
+/* PANEL PRINCIPAL */
+.citas-panel {
+    background-color: white;
+    padding: 28px;
+    border-radius: 22px;
+    border: 1px solid #e7edf5;
+    box-shadow: 0 5px 20px rgba(20, 37, 84, 0.05);
+}
+
+.citas-panel .panel-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.citas-panel .panel-encabezado h2 {
+    color: #101945;
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.citas-panel .panel-encabezado p {
+    color: #8994a8;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* BUSCADOR */
+.citas-panel .panel-encabezado form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#buscarCita {
+    width: 260px;
+    max-width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #dce5f1;
+    border-radius: 12px;
+    outline: none;
+    background-color: #f7f9fd;
+    color: #101945;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#buscarCita:focus {
+    background-color: white;
+    border-color: #59bafa;
+    box-shadow: 0 0 0 3px rgba(89, 186, 250, 0.15);
+}
+
+/* BOTÓN BUSCAR */
+.btn-buscar {
+    background-color: #08086e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-buscar:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-2px);
+}
+
+/* TABLA */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-citas {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-citas thead {
+    background-color: #eef4fb;
+}
+
+.tabla-citas th {
+    color: #34476d;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 17px;
+    white-space: nowrap;
+}
+
+.tabla-citas td {
+    color: #52617e;
+    font-size: 13px;
+    padding: 17px;
+    border-bottom: 1px solid #e9eef5;
+}
+
+.tabla-citas tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.tabla-citas tbody tr:hover {
+    background-color: #f4f9ff;
+}
+
+.tabla-citas tr[hidden] {
+    display: none;
+}
+
+.tabla-vacia {
+    text-align: center;
+    color: #8994a8;
+    padding: 30px;
+}
+
+/* ESTADOS DE LAS CITAS */
+.estado-cita {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.estado-pendiente {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.estado-confirmada {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.estado-cancelada {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.estado-cita.estado-completada {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-radius: 25px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.texto-cancelada {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* BOTONES DE ACCIONES */
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-completar {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #dff0ff;
+    color: #1267a5;
+}
+
+.btn-editar:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-eliminar:hover {
+    background-color: #ef4444;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-eliminar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-completar {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.btn-completar:hover {
+    background-color: #10b981;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* VENTANAS EMERGENTES */
+.modal-cita {
+    width: min(520px, 92vw);
+    max-height: 90vh;
+    margin: auto;
+    padding: 30px;
+    border: none;
+    border-radius: 22px;
+    background-color: white;
+    color: #101945;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* CENTRAR MODALES ABIERTOS POR BLADE */
+.modal-cita[open]:not(:modal) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* ANIMACIÓN SIN DESPLAZAMIENTO */
+.modal-cita[open] {
+    animation: aparecerModal 0.25s ease;
+}
+
+.modal-cita::backdrop {
+    background-color: rgba(3, 12, 45, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ENCABEZADO DEL MODAL */
+.modal-cita .modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.modal-cita .modal-encabezado h2 {
+    color: #101945;
+    font-size: 23px;
+    margin: 0;
+}
+
+.modal-cita .modal-encabezado button {
+    background-color: #edf2f8;
+    color: #34476d;
+    border: none;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-cita .modal-encabezado button:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* CAMPOS DEL FORMULARIO */
+.modal-cita .grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.modal-cita .grupo-campo label {
+    color: #34476d;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.modal-cita .grupo-campo input,
+.modal-cita .grupo-campo select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dce5f1;
+    border-radius: 11px;
+    background-color: #f7f9fd;
+    color: #101945;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.modal-cita .grupo-campo input:focus,
+.modal-cita .grupo-campo select:focus {
+    background-color: white;
+    border-color: #59bafa;
+    box-shadow: 0 0 0 3px rgba(89, 186, 250, 0.15);
+}
+
+/* ERRORES DE VALIDACIÓN */
+.modal-cita .error-campo {
+    display: block;
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.modal-cita .error-campo:empty {
+    display: none;
+}
+
+/* MENSAJES */
+.mensaje-exito {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.mensaje-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* CONFIRMACIÓN DE CANCELACIÓN */
+.modal-cita .modal-mensaje {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.modal-cita .modal-mensaje h3 {
+    color: #101945;
+    font-size: 18px;
+}
+
+.modal-cita .modal-mensaje p {
+    color: #52617e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-cita .advertencia {
+    color: #b91c1c !important;
+    background-color: #fff1f2;
+    padding: 13px;
+    border-radius: 11px;
+    font-size: 13px;
+}
+
+/* BOTONES DE MODALES */
+.modal-cita .modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.modal-cita .btn-cancelar,
+.modal-cita .btn-guardar {
+    border: none;
+    border-radius: 11px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-cita .btn-cancelar {
+    background-color: #edf2f8;
+    color: #52617e;
+}
+
+.modal-cita .btn-cancelar:hover {
+    background-color: #dce5f1;
+}
+
+.modal-cita .btn-guardar {
+    background-color: #08086e;
+    color: white;
+}
+
+.modal-cita .btn-guardar:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-2px);
+}
+
+/* AVISO DEL HORARIO */
+.aviso-horario {
+    background-color: #d1e6fc;
+    border-left: 4px solid #64b8f0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 15px 0 20px;
+}
+
+.aviso-horario strong {
+    color: #08086e;
+    font-size: 14px;
+}
+
+.aviso-horario p {
+    color: #1f2531;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+/* PANTALLAS MEDIANAS */
+@media (max-width: 1100px) {
+    .citas-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* PANTALLAS PEQUEÑAS */
+@media (max-width: 850px) {
+    .citas-dashboard {
+        padding: 20px;
+    }
+
+    .citas-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .citas-header h1 {
+        font-size: 25px;
+    }
+
+    .citas-estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .citas-panel {
+        padding: 18px;
+    }
+
+    .citas-panel .panel-encabezado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .citas-panel .panel-encabezado form {
+        width: 100%;
+    }
+
+    #buscarCita {
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .acciones {
+        flex-wrap: wrap;
+    }
+
+    .modal-cita {
+        padding: 20px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .modal-cita[open] {
+        animation: none;
+    }
+}
+/* --- TRANSFORMACIÓN A MORADO MODERNO --- */
+body {
+    background-color: #f8fafc !important;
+}
+
+.citas-header {
+    background: linear-gradient(135deg, #5b21b6, #7c3aed) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 20px -5px rgba(124, 58, 237, 0.3) !important;
+}
+
+.citas-header h1, .citas-header p {
+    color: white !important;
+}
+
+/* Tarjetas de estadísticas con acento morado */
+.citas-resumen {
+    border-top: 4px solid #7c3aed !important;
+    border-radius: 12px !important;
+}
+
+/* Botones principales en tono morado */
+.btn-principal, .btn-buscar {
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+.btn-principal:hover, .btn-buscar:hover {
+    background-color: #5b21b6 !important;
+}
+
+/* Encabezado de la tabla */
+.tabla-citas th {
+    background-color: #f3e8ff !important;
+    color: #5b21b6 !important;
+}

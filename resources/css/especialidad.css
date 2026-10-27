@@ -1,0 +1,563 @@
+
+/* Página de especialidades */
+.especialidades-dashboard {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px;
+    background-color: #f0f3f8;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.especialidades-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.especialidades-header .etiqueta {
+    color: #4176a5;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.especialidades-header h1 {
+    color: #101945;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.especialidades-header p {
+    color: #77839a;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Botón para registrar */
+.btn-principal {
+    background-color: #08086e;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    padding: 14px 23px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(8, 8, 110, 0.15);
+}
+
+/* Estadísticas */
+.especialidades-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.especialidades-resumen {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #e7edf5;
+    box-shadow: 0 5px 20px rgba(20, 37, 84, 0.05);
+    transition: all 0.3s ease;
+}
+
+.especialidades-resumen:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(20, 37, 84, 0.10);
+}
+
+.especialidades-resumen h3 {
+    color: #495875;
+    font-size: 16px;
+    margin: 0 0 12px;
+}
+
+.especialidades-resumen h2 {
+    color: #101945;
+    font-size: 38px;
+    margin: 0 0 10px;
+}
+
+.especialidades-resumen p {
+    color: #8994a8;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Panel principal */
+.especialidades-panel {
+    background-color: white;
+    padding: 28px;
+    border-radius: 22px;
+    border: 1px solid #e7edf5;
+    box-shadow: 0 5px 20px rgba(20, 37, 84, 0.05);
+}
+
+.especialidades-panel .panel-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.especialidades-panel .panel-encabezado h2 {
+    color: #101945;
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.especialidades-panel .panel-encabezado p {
+    color: #8994a8;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Buscador */
+.especialidades-panel .panel-encabezado form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#buscarEspecialidad {
+    width: 260px;
+    max-width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #dce5f1;
+    border-radius: 12px;
+    outline: none;
+    background-color: #f7f9fd;
+    color: #101945;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#buscarEspecialidad:focus {
+    background-color: white;
+    border-color: #59bafa;
+    box-shadow: 0 0 0 3px rgba(89, 186, 250, 0.15);
+}
+
+/* Botón Buscar */
+.especialidades-panel .panel-encabezado form button {
+    background-color: #08086e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.especialidades-panel .panel-encabezado form button:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-2px);
+}
+
+/* Tabla */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-especialidades {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-especialidades thead {
+    background-color: #eef4fb;
+}
+
+.tabla-especialidades th {
+    color: #34476d;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 17px;
+    white-space: nowrap;
+}
+
+.tabla-especialidades td {
+    color: #52617e;
+    font-size: 13px;
+    padding: 17px;
+    border-bottom: 1px solid #e9eef5;
+}
+
+.tabla-especialidades tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.tabla-especialidades tbody tr:hover {
+    background-color: #f4f9ff;
+}
+
+.tabla-vacia {
+    text-align: center;
+    color: #8994a8;
+    padding: 30px;
+}
+
+#sinResultados {
+    color: #8994a8;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Botones de acciones */
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-editar,
+.btn-eliminar {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #dff0ff;
+    color: #1267a5;
+}
+
+.btn-editar:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: scale(1.05);
+}
+
+.btn-eliminar {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-eliminar:hover {
+    background-color: #ef4444;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Ventanas emergentes */
+.modal-especialidad {
+    width: min(500px, 92vw);
+    max-height: 90vh;
+    margin: auto;
+    padding: 30px;
+    border: none;
+    border-radius: 22px;
+    background-color: white;
+    color: #101945;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Centrar formularios abiertos por Laravel Blade */
+.modal-especialidad[open]:not(:modal) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* Animación de aparición */
+.modal-especialidad[open] {
+    animation: aparecerModal 0.25s ease;
+}
+
+.modal-especialidad::backdrop {
+    background-color: rgba(3, 12, 45, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Encabezado del modal */
+.modal-especialidad .modal-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.modal-especialidad .modal-encabezado h2 {
+    color: #101945;
+    font-size: 23px;
+    margin: 0;
+}
+
+.modal-especialidad .modal-encabezado button {
+    background-color: #edf2f8;
+    color: #34476d;
+    border: none;
+    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-especialidad .modal-encabezado button:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* Campos */
+.modal-especialidad .grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.modal-especialidad .grupo-campo label {
+    color: #34476d;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.modal-especialidad .grupo-campo input,
+.modal-especialidad .grupo-campo textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dce5f1;
+    border-radius: 11px;
+    background-color: #f7f9fd;
+    color: #101945;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.modal-especialidad .grupo-campo input:focus,
+.modal-especialidad .grupo-campo textarea:focus {
+    background-color: white;
+    border-color: #59bafa;
+    box-shadow: 0 0 0 3px rgba(89, 186, 250, 0.15);
+}
+
+/* Errores de validación */
+.modal-especialidad .error-campo {
+    display: block;
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.modal-especialidad .error-campo:empty {
+    display: none;
+}
+
+/* Confirmación de eliminación */
+.modal-especialidad .modal-mensaje {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.modal-especialidad .modal-mensaje h3 {
+    color: #101945;
+    font-size: 18px;
+}
+
+.modal-especialidad .modal-mensaje p {
+    color: #52617e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.modal-especialidad .advertencia {
+    color: #b91c1c !important;
+    background-color: #fff1f2;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 13px;
+}
+
+/* Botones del modal */
+.modal-especialidad .modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.modal-especialidad .btn-cancelar,
+.modal-especialidad .btn-guardar {
+    border: none;
+    border-radius: 11px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-especialidad .btn-cancelar {
+    background-color: #edf2f8;
+    color: #52617e;
+}
+
+.modal-especialidad .btn-cancelar:hover {
+    background-color: #dce5f1;
+}
+
+.modal-especialidad .btn-guardar {
+    background-color: #08086e;
+    color: white;
+}
+
+.modal-especialidad .btn-guardar:hover {
+    background-color: #59bafa;
+    color: #082249;
+    transform: translateY(-2px);
+}
+
+/* Mensajes */
+.mensaje-exito {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.mensaje-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 850px) {
+    .especialidades-dashboard {
+        padding: 20px;
+    }
+
+    .especialidades-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .especialidades-header h1 {
+        font-size: 25px;
+    }
+
+    .especialidades-panel {
+        padding: 18px;
+    }
+
+    .especialidades-panel .panel-encabezado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .especialidades-panel .panel-encabezado form {
+        width: 100%;
+    }
+
+    #buscarEspecialidad {
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .acciones {
+        flex-wrap: wrap;
+    }
+
+    .modal-especialidad {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-especialidad[open] {
+        animation: none;
+    }
+}
+/* --- ADAPTACIÓN A MORADO MODERNO (GENERAL) --- */
+
+/* Fondos generales y contenedores */
+body, .contenedor, main {
+    background-color: #f8fafc !important;
+}
+
+/* Encabezados de sección en las otras vistas */
+.medicos-header, .pacientes-header, .home-header, .consultorios-header {
+    background: linear-gradient(135deg, #5b21b6, #7c3aed) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 20px -5px rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Títulos y textos dentro de los encabezados */
+.medicos-header h1, .pacientes-header h1, .home-header h1, 
+.medicos-header p, .pacientes-header p, .home-header p {
+    color: white !important;
+}
+
+/* Botones de acción y formularios en general */
+.btn-primary, .btn-nuevo, button[type="submit"] {
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+.btn-primary:hover, .btn-nuevo:hover, button[type="submit"]:hover {
+    background-color: #5b21b6 !important;
+}
+
+/* Encabezados de tablas en otras vistas */
+table th, .table th {
+    background-color: #f3e8ff !important;
+    color: #5b21b6 !important;
+}
